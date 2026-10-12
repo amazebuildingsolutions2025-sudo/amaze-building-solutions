@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Hammer, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoImg from "@/assets/logo.png";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -31,18 +32,23 @@ export function Navbar() {
       )}
     >
       <div className="container-x flex h-16 md:h-20 items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5 group">
-          <span className="flex h-10 w-10 items-center justify-center rounded-md bg-steel text-steel-foreground shadow-md group-hover:bg-amber-cta transition-colors duration-300">
-            <Hammer className="h-5 w-5" strokeWidth={2.5} />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-[15px] font-extrabold tracking-tight text-steel">
-              Amaze Building
-            </span>
-            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-cta">
-              Solutions
-            </span>
-          </span>
+        <a
+          href="#home"
+          className="flex items-center group focus:outline-none"
+          aria-label="Amaze Building Solutions Home"
+        >
+          <div
+            className={cn(
+              "flex items-center justify-center rounded-lg px-2.5 py-1.5 transition-all duration-300",
+              scrolled ? "bg-transparent" : "bg-white shadow-sm border border-slate-200/60",
+            )}
+          >
+            <img
+              src={logoImg}
+              alt="Amaze Building Solutions"
+              className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">

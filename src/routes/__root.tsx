@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logoUrl from "../assets/logo.png?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -78,17 +79,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Amaze Building Solutions — Industrial Roofing & Fabrication, Kollam" },
-      { name: "description", content: "Kerala's trusted industrial roofing contractor and structural steel fabrication firm. 4+ years, 5.0 rated. Based in Kollam." },
-      { property: "og:title", content: "Amaze Building Solutions — Engineering Strength, Delivering Excellence" },
-      { property: "og:description", content: "Industrial roofing, heavy structural fabrication, gates, and solar structures across Kerala." },
+      {
+        name: "description",
+        content:
+          "Kerala's trusted industrial roofing contractor and structural steel fabrication firm. 4+ years, 5.0 rated. Based in Kollam.",
+      },
+      {
+        property: "og:title",
+        content: "Amaze Building Solutions — Engineering Strength, Delivering Excellence",
+      },
+      {
+        property: "og:description",
+        content:
+          "Industrial roofing, heavy structural fabrication, gates, and solar structures across Kerala.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: logoUrl },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "icon", href: logoUrl, type: "image/png" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

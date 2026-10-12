@@ -1,5 +1,6 @@
-import { Hammer, Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
 import { waAppLink, handleWhatsAppClick, WhatsAppIcon } from "@/lib/whatsapp";
+import logoImg from "@/assets/logo.png";
 
 const serviceList = [
   "Industrial Roofing",
@@ -18,16 +19,18 @@ export function Footer() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px]" />
       <div className="container-x relative grid grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="col-span-2 lg:col-span-1">
-          <a href="#home" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-amber-cta text-white">
-              <Hammer className="h-5 w-5" strokeWidth={2.5} />
-            </span>
-            <span className="flex flex-col leading-tight">
-              <span className="text-base font-extrabold text-white">Amaze Building</span>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-cta">
-                Solutions
-              </span>
-            </span>
+          <a
+            href="#home"
+            className="inline-flex items-center group focus:outline-none"
+            aria-label="Amaze Building Solutions Home"
+          >
+            <div className="flex items-center justify-center rounded-xl bg-white px-3 py-2 shadow-md group-hover:shadow-lg transition-all duration-300">
+              <img
+                src={logoImg}
+                alt="Amaze Building Solutions"
+                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
           </a>
           <p className="mt-5 text-sm text-slate-400 leading-relaxed">
             Engineering strength, delivering excellence. Kerala's trusted partner
